@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_light"
+    android:orientation="vertical">
+
+    <!-- Toolbar -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbarBorrowBook"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/primary"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:navigationIconTint="@color/white"
+        app:title="@string/borrow_book"
+        app:titleTextColor="@color/white" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Member Spinner Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Member"
+                android:textColor="@color/text_primary"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="1dp"
+                app:strokeColor="@color/divider_color"
+                app:strokeWidth="1dp">
+
+                <Spinner
+                    android:id="@+id/spinnerBorrowMember"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="12dp" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Book Spinner Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Select Book"
+                android:textColor="@color/text_primary"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="1dp"
+                app:strokeColor="@color/divider_color"
+                app:strokeWidth="1dp">
+
+                <Spinner
+                    android:id="@+id/spinnerBorrowBook"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="12dp" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Availability Indicator Badge -->
+            <TextView
+                android:id="@+id/tvBorrowAvailability"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_badge_available"
+                android:textColor="@color/status_available_text"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                tools:text="Book Available (4 copies left)" />
+
+            <!-- Borrow Date -->
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Borrow Date (YYYY-MM-DD)"
+                app:hintTextColor="@color/primary"
+                app:startIconDrawable="@drawable/ic_calendar"
+                app:startIconTint="@color/primary">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etBorrowDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="date"
+                    android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_secondary" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Expected Return Date -->
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="Expected Return Date (YYYY-MM-DD)"
+                app:hintTextColor="@color/primary"
+                app:startIconDrawable="@drawable/ic_calendar"
+                app:startIconTint="@color/primary">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etExpectedReturnDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="date"
+                    android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_secondary" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Submit Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSubmitBorrow"
+                style="@style/Widget.LibraryApp.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:text="BORROW BOOK" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

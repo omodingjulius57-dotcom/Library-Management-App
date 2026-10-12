@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.LibraryApp">
+
+        <!-- Login Launcher Activity -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true"
+            android:theme="@style/Theme.LibraryApp"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Main Dashboard -->
+        <activity
+            android:name=".DashboardActivity"
+            android:exported="false"
+            android:theme="@style/Theme.LibraryApp" />
+
+        <!-- Books Management -->
+        <activity
+            android:name=".BooksListActivity"
+            android:exported="false"
+            android:parentActivityName=".DashboardActivity" />
+        <activity
+            android:name=".AddBookActivity"
+            android:exported="false"
+            android:parentActivityName=".BooksListActivity" />
+        <activity
+            android:name=".BookDetailsActivity"
+            android:exported="false"
+            android:parentActivityName=".BooksListActivity" />
+        <activity
+            android:name=".EditBookActivity"
+            android:exported="false"
+            android:parentActivityName=".BookDetailsActivity" />
+
+        <!-- Members Management -->
+        <activity
+            android:name=".MembersListActivity"
+            android:exported="false"
+            android:parentActivityName=".DashboardActivity" />
+        <activity
+            android:name=".AddMemberActivity"
+            android:exported="false"
+            android:parentActivityName=".MembersListActivity" />
+        <activity
+            android:name=".MemberDetailsActivity"
+            android:exported="false"
+            android:parentActivityName=".MembersListActivity" />
+
+        <!-- Borrow & Return Operations -->
+        <activity
+            android:name=".BorrowBookActivity"
+            android:exported="false"
+            android:parentActivityName=".DashboardActivity" />
+        <activity
+            android:name=".ReturnBookActivity"
+            android:exported="false"
+            android:parentActivityName=".DashboardActivity" />
+
+        <!-- History & Overdue -->
+        <activity
+            android:name=".BorrowingHistoryActivity"
+            android:exported="false"
+            android:parentActivityName=".DashboardActivity" />
+        <activity
+            android:name=".OverdueBooksActivity"
+            android:exported="false"
+            android:parentActivityName=".DashboardActivity" />
+
+        <!-- Utilities -->
+        <activity
+            android:name=".SearchActivity"
+            android:exported="false"
+            android:parentActivityName=".DashboardActivity" />
+        <activity
+            android:name=".ReportsActivity"
+            android:exported="false"
+            android:parentActivityName=".DashboardActivity" />
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false"
+            android:parentActivityName=".DashboardActivity" />
+
+    </application>
+
+</manifest>
